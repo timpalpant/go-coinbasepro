@@ -21,6 +21,8 @@ type Message struct {
 	NewSize       string           `json:"new_size"`
 	OldSize       string           `json:"old_size"`
 	Size          string           `json:"size"`
+	NewPrice      string           `json:"new_price"`
+	OldPrice      string           `json:"old_price"`
 	Price         string           `json:"price"`
 	Side          string           `json:"side"`
 	Reason        string           `json:"reason"`
