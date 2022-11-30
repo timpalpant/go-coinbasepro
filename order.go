@@ -55,8 +55,8 @@ func (c *Client) CreateOrder(newOrder *Order) (Order, error) {
 	return savedOrder, err
 }
 
-func (c *Client) CancelOrder(id string) error {
-	url := fmt.Sprintf("/orders/%s", id)
+func (c *Client) CancelOrder(productID, id string) error {
+	url := fmt.Sprintf("/orders/%s?product_id=%s", id, productID)
 	_, err := c.Request("DELETE", url, nil, nil)
 	return err
 }

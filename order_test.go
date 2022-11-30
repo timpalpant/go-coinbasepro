@@ -30,7 +30,7 @@ func TestCreateLimitOrders(t *testing.T) {
 		t.Error(err)
 	}
 
-	if err := client.CancelOrder(savedOrder.ID); err != nil {
+	if err := client.CancelOrder(order.ProductID, savedOrder.ID); err != nil {
 		t.Error(err)
 	}
 }
@@ -77,7 +77,7 @@ func TestCancelOrder(t *testing.T) {
 		t.Error(err)
 	}
 
-	if err := client.CancelOrder(savedOrder.ID); err != nil {
+	if err := client.CancelOrder(order.ProductID, savedOrder.ID); err != nil {
 		t.Error(err)
 		t.Error(err)
 	}
@@ -107,7 +107,7 @@ func TestGetOrder(t *testing.T) {
 		t.Error(errors.New("Order ids do not match"))
 	}
 
-	if err := client.CancelOrder(savedOrder.ID); err != nil {
+	if err := client.CancelOrder(order.ProductID, savedOrder.ID); err != nil {
 		t.Error(err)
 	}
 }
